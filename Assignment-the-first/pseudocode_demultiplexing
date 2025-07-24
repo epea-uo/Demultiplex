@@ -1,0 +1,57 @@
+set variables for (all set to 0): total_dual_pairs, total_mismatched_pairs, total_unknown_pairs
+make empty dict for: dual_pairs_counts, mismatched_pairs_count, unknown_pairs_count
+
+add arguments from user for reads 1-4 files as r#\_file and known barcodes file
+
+import bioinfo
+import matlibplot
+import gzip
+
+r2_line_counter = 0
+r3_line_counter = 0
+
+open r2_file as r2, open r3_file as r3 (use gzip.open here)
+	for each line1 in r2
+		strip line1 of trailing whitespace
+		add 1 to r2_line_counter
+		if its the fourth line in each record (in r2 file)
+			for line2 in r3
+				strip line of trailing whitespace
+				add 1 to r3_line_counter
+				if its the fourth line in each record (in r3 file)
+					if line1 or line2 not in known barcodes
+						if line1_line2 is not in the keys in unknown dictionary
+							add line1_line2 to key with value of 1
+						else
+							add 1 to line1_line2 value in unknown dictionary
+						write to unknown reads r1 fastq file (format = line1_line2_original header from original r1 file, other lines from record)
+						write to unknown reads r2 fastq file
+						(format = line1_line2_original header from original r4 file, other lines from record)
+					elif line1 or line2's average quality \< quality cutoff
+						if line1_line2 is not in the keys in unknown dictionary
+							add line1_line2 to key with value of 1
+						else
+							add 1 to line1_line2 value in unknown dictionary
+						add stuff from above if loop to unknown r1 and r2 files
+					elif line1 is not the same as the reverse compliment(line2)
+						if line1_line2 is not in the keys in mismatched dictionary
+							add line1_line2 to key with value of 1
+						else
+							add 1 to line1_line2 value in mismatched dictionary
+						open index hopped r1 and r2 file and write record there
+					elif line1 is the same as the reverse compliment(line2)
+						if line1_line2 is not in the keys in dual matched dictionary
+							add line1_line2 to key with value of 1
+						else
+							add 1 to line1_line2 value in dual matched dictionary
+						open r1_file as r1, open r4_file as r4
+							write to dual matched file (follows format of line1_line2_r1.fastq)
+
+print to terminal: "total number of dual matched reads:" Sum of values in dual matched dictionary
+make figure with matched pair frequency of on x axis and number of occurrences in that category on the y axis
+
+print to terminal: "total number of mismatched reads:" Sum of values in mismatched dictionary
+make figure with mismatched pair frequency of on x axis and number of occurrences in that category on the y axis
+
+print to terminal: "total number of unknown reads:" Sum of values in unknown dictionary
+make figure with unknown pair frequency on x axis and number of occurrences in that category on the y axis
