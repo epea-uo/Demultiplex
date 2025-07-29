@@ -12,8 +12,12 @@
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. **YOUR ANSWER HERE**
-    3. **YOUR ANSWER HERE**
+    2. Based on the histograms, most positions have a pretty high average quality in both the biological reads and the barcodes. However, barcodes quality is somewhat lower (likely due to it being in the beginning). To account for this using a barcode cut off of 33 and a cut off of 35 for biological reads seem appropriate
+    3. zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | grep -B 1 "+" | grep "N" | wc -l and zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | grep -B 1 "+" | grep "N" | wc -l
+    Total R2 = 3976613
+    Total R3 = 3328051
+    Combined total = 7304664
+
     
 ## Part 2
 1. Define the problem
