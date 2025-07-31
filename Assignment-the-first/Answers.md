@@ -11,10 +11,10 @@
 | 1294_S1_L008_R4_001.fastq.gz | bio_r2 | 101 | 33 |
 
 2. Per-base NT distribution
-    1. https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R1_001.png?raw=true
-https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R2_001.png?raw=true
-https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R3_001.png?raw=true
-https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R4_001.png?raw=true
+    1. ![R1 histogram](https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R1_001.png)
+	![R2 histogram](https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R2_001.png)
+![R3 histogram](https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R3_001.png)
+![R4 histogram](https://github.com/epea-uo/Demultiplex/blob/master/Assignment-the-first/1294_S1_L008_R4_001.png)
     3. Based on the histograms, most positions have a pretty high average quality in both the biological reads and the barcodes. However, barcodes quality is somewhat lower (likely due to it being in the beginning). To account for this using a barcode cut off of 33 and a cut off of 35 for biological reads seem appropriate
     4. zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | grep -B 1 "+" | grep "N" | wc -l and zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | grep -B 1 "+" | grep "N" | wc -l
     Total R2 = 3976613
