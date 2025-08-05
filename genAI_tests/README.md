@@ -12,3 +12,8 @@ Note: Looks good, not the most creative sequences for the biological reads
 Now I would like to make one file called AI_known_barcodes that has 5 tab separated columns. Column one should be sample followed by group, treatment, index, and index sequence. There should be three rows after the header that has the first three barcodes from AI_test1.r2.fastq. The barcodes should be under the index sequence column. The other three columns can be random strings. Can you make this file?
 
 Note: looks good
+
+
+### Overall thoughts:
+
+It was definitely pretty easy to make the files. However, it was probably only so easy because I had alsready made the files on my own. On the other hand, I do think I'm fairly good at making clear prompts for AI. Both of these prompts took one main attempt and only one small edit each.
