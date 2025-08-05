@@ -8,3 +8,7 @@ I want to make unit tests for demultiplexing. These should be four files all in 
 Note: Looks good, not the most creative sequences for the biological reads
 
 ### To make known barcodes file:
+
+Now I would like to make one file called AI_known_barcodes that has 5 tab separated columns. Column one should be sample followed by group, treatment, index, and index sequence. There should be three rows after the header that has the first three barcodes from AI_test1.r2.fastq. The barcodes should be under the index sequence column. The other three columns can be random strings. Can you make this file?
+
+Note: looks good
