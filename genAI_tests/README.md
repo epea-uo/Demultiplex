@@ -1,6 +1,6 @@
 Trying to use copilot to make unit tests for demultiplexing.
 
-Important: Could not ever get it to make the correct read 1 and read 4 files.
+**Important**: Could not ever get it to make the correct read 1 and read 4 files.
 
 ## Prompts:
 
